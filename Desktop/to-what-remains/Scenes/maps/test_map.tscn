@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bntmnxx01y0nc"]
+
+[ext_resource type="Script" uid="uid://bgaxjefg4ib61" path="res://Scenes/maps/camera_rig.gd" id="1_jeks0"]
+[ext_resource type="PackedScene" uid="uid://cw2b1anpqcxjs" path="res://units/unit.tscn" id="2_yiw8y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00xwk"]
+albedo_color = Color(0.9269673, 0.6311263, 0.16925034, 1)
+
+[sub_resource type="Environment" id="Environment_00xwk"]
+background_mode = 1
+background_color = Color(0.20619842, 0.7134814, 0.98288125, 1)
+
+[node name="TestMap" type="Node3D" unique_id=776305210]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=765730101]
+use_collision = true
+size = Vector3(20, 0.2, 20)
+material = SubResource("StandardMaterial3D_00xwk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=153682968]
+transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 13.33416, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=438393136]
+environment = SubResource("Environment_00xwk")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1792556793]
+script = ExtResource("1_jeks0")
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=2113721125]
+transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 0, 15, 12)
+
+[node name="cover_1" type="CSGBox3D" parent="." unique_id=1938941761]
+transform = Transform3D(0.9992962, -0.034073632, 0.015685791, 0.034851667, 0.9980212, -0.05233596, -0.013871476, 0.052845802, 0.9985063, 0, 0, 0)
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="cover_2" type="CSGBox3D" parent="." unique_id=45641982]
+transform = Transform3D(0.9992962, -0.034073632, 0.015685791, 0.034851667, 0.9980212, -0.05233596, -0.013871476, 0.052845802, 0.9985063, -3.8362699, 0, 5.3839893)
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="cover_3" type="CSGBox3D" parent="." unique_id=1920369167]
+transform = Transform3D(0.9992962, -0.034073632, 0.015685791, 0.034851667, 0.9980212, -0.05233596, -0.013871476, 0.052845802, 0.9985063, 5.1435575, 0, -4.2406178)
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="Unit" parent="." unique_id=1471769610 instance=ExtResource("2_yiw8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6498253, 0.10000038, 7.9806294)
