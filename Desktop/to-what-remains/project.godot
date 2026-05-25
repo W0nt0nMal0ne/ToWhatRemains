@@ -19,6 +19,10 @@ run/main_scene="uid://bntmnxx01y0nc"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://cftb1ui1xb4ap"
+
 [input]
 
 cam_left={

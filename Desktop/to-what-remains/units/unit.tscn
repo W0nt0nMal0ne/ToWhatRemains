@@ -8,6 +8,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2atv2"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_2atv2"]
+
 [node name="Unit" type="CharacterBody3D" unique_id=1471769610]
 script = ExtResource("1_2atv2")
 
@@ -31,5 +33,9 @@ height = 0.05
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1134073450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_2atv2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1981288164]
+transform = Transform3D(0.29460222, 0, 0, 0, 0.115938835, 0, 0, 0, 0.29460222, 0, 1.674, -0.5107198)
+mesh = SubResource("BoxMesh_2atv2")
 
 [connection signal="input_event" from="Hitbox" to="." method="_on_hitbox_input_event"]

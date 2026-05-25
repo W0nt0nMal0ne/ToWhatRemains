@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bntmnxx01y0nc"]
 
+[ext_resource type="Script" uid="uid://c323obyviikjy" path="res://Scenes/maps/test_map.gd" id="1_3x14o"]
 [ext_resource type="Script" uid="uid://bgaxjefg4ib61" path="res://Scenes/maps/camera_rig.gd" id="1_jeks0"]
 [ext_resource type="PackedScene" uid="uid://cw2b1anpqcxjs" path="res://units/unit.tscn" id="2_yiw8y"]
+[ext_resource type="Script" uid="uid://68n8ybqh7njy" path="res://Scenes/maps/ui.gd" id="4_vd8et"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00xwk"]
 albedo_color = Color(0.9269673, 0.6311263, 0.16925034, 1)
@@ -11,6 +13,7 @@ background_mode = 1
 background_color = Color(0.20619842, 0.7134814, 0.98288125, 1)
 
 [node name="TestMap" type="Node3D" unique_id=776305210]
+script = ExtResource("1_3x14o")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=765730101]
 use_collision = true
@@ -32,15 +35,36 @@ transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64
 
 [node name="cover_1" type="CSGBox3D" parent="." unique_id=1938941761]
 transform = Transform3D(0.9992962, -0.034073632, 0.015685791, 0.034851667, 0.9980212, -0.05233596, -0.013871476, 0.052845802, 0.9985063, 0, 0, 0)
+use_collision = true
 size = Vector3(1.5, 1.5, 1.5)
 
 [node name="cover_2" type="CSGBox3D" parent="." unique_id=45641982]
 transform = Transform3D(0.9992962, -0.034073632, 0.015685791, 0.034851667, 0.9980212, -0.05233596, -0.013871476, 0.052845802, 0.9985063, -3.8362699, 0, 5.3839893)
+use_collision = true
 size = Vector3(1.5, 1.5, 1.5)
 
 [node name="cover_3" type="CSGBox3D" parent="." unique_id=1920369167]
 transform = Transform3D(0.9992962, -0.034073632, 0.015685791, 0.034851667, 0.9980212, -0.05233596, -0.013871476, 0.052845802, 0.9985063, 5.1435575, 0, -4.2406178)
+use_collision = true
 size = Vector3(1.5, 1.5, 1.5)
 
 [node name="Unit" parent="." unique_id=1471769610 instance=ExtResource("2_yiw8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6498253, 0.10000038, 7.9806294)
+move_range = 10.0
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1592029375]
+script = ExtResource("4_vd8et")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI" unique_id=774287025]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="CPLabel" type="Label" parent="UI/VBoxContainer" unique_id=249541133]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TurnLabel" type="Label" parent="UI/VBoxContainer" unique_id=771924736]
+unique_name_in_owner = true
+layout_mode = 2
